@@ -1,6 +1,7 @@
 package com.finshot.bulletin.dao;
 
 import com.finshot.bulletin.model.Post;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -24,5 +25,5 @@ public interface PostDao {
     void incrementViewCount(Integer id);
 
     // Memeriksa password
-    boolean checkPassword(Integer id, String password);
+    boolean checkPassword(@Param("id") Integer id, @Param("password") String password);
 }

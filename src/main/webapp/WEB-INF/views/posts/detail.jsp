@@ -16,7 +16,7 @@
     <div class="card-header">
         <h3 class="card-title">${post.title}</h3>
         <div class="text-muted">
-            By ${post.author} | Views: ${post.viewCount} | Created: ${DateFormatter.format(post.createdAt)}
+            Post No. ${post.id} | By ${post.author} | Views: ${post.viewCount} | Created: ${DateFormatter.format(post.createdAt)}
             <c:if test="${post.updatedAt != null}">
                 | Updated: ${DateFormatter.format(post.updatedAt)}
             </c:if>

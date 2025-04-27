@@ -7,6 +7,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <setting name="callSettersOnNulls" value="true"/>
         <setting name="useGeneratedKeys" value="true"/>
+        <setting name="logImpl" value="SLF4J"/>
+        <setting name="logPrefix" value="MyBatis==>"/>
     </settings>
     <typeAliases>
         <package name="com.finshot.bulletin.model"/>
