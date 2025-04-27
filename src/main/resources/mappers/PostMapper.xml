@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.finshot.bulletin.dao.PostDao">
+
+    <resultMap id="postResultMap" type="Post">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="author" column="author"/>
+        <result property="password" column="password"/>
+        <result property="content" column="content"/>
+        <result property="viewCount" column="view_count"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <select id="getAllPosts" resultMap="postResultMap">
+        SELECT id, title, author, content, view_count, created_at, updated_at
+        FROM posts
+        WHERE is_deleted = false
+        ORDER BY id DESC
+    </select>
+
+    <select id="getPostById" parameterType="int" resultMap="postResultMap">
+        SELECT id, title, author, content, view_count, created_at, updated_at
+        FROM posts
+        WHERE id = #{id}
+          AND is_deleted = false
+    </select>
+
+    <insert id="insertPost" parameterType="Post" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO posts (title, author, password, content)
+        VALUES (#{title}, #{author}, #{password}, #{content})
+    </insert>
+
+    <update id="updatePost" parameterType="Post">
+        UPDATE posts
+        SET title      = #{title},
+            author     = #{author},
+            content    = #{content},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = #{id}
+    </update>
+
+    <update id="deletePost" parameterType="int">
+        UPDATE posts
+        SET is_deleted = true
+        WHERE id = #{id}
+    </update>
+
+    <update id="incrementViewCount" parameterType="int">
+        UPDATE posts
+        SET view_count = view_count + 1
+        WHERE id = #{id}
+    </update>
+
+    <select id="checkPassword" resultType="boolean">
+        SELECT COUNT(*) > 0
+        FROM posts
+        WHERE id = #{id}
+          AND password = #{password}
+    </select>
+</mapper>
