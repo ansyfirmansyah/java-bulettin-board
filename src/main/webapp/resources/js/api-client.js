@@ -80,24 +80,7 @@ const apiClient = {
         }
     },
 
-    // Verify password for a post
-    verifyPassword: async (id, password) => {
-        try {
-            const response = await fetch(`${API_BASE_URL}/posts/${id}/verify-password`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({password})
-            });
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error(`Error verifying password for post ${id}:`, error);
-            throw error;
-        }
-    },
-
+    // Format date to string with proper display format
     formatDateForDisplay: function formatDateForDisplay(dateValue) {
         if (!dateValue) return '';
 

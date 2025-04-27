@@ -86,15 +86,6 @@ public class PostRestController {
         return ResponseEntity.ok(new ApiResponse<>(true, "Post deleted successfully", null));
     }
 
-    @PostMapping("/{id}/verify-password")
-    public ResponseEntity<ApiResponse<Boolean>> verifyPassword(
-            @PathVariable Integer id,
-            @RequestBody PasswordRequest passwordRequest) {
-
-        boolean valid = postService.isPasswordValid(id, passwordRequest.getPassword());
-        return ResponseEntity.ok(new ApiResponse<>(true, valid ? "Password valid" : "Password invalid", valid));
-    }
-
     // Helper method untuk konversi DTO ke entity
     private PostDTO convertToDTO(Post post) {
         PostDTO dto = new PostDTO();
