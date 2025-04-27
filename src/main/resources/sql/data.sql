@@ -1,8 +1,9 @@
--- Data awal untuk testing
+-- Clear existing data
+TRUNCATE TABLE posts RESTART IDENTITY CASCADE;
+
+-- Insert sample data
 INSERT INTO posts (title, author, password, content, view_count, created_at)
-VALUES ('Selamat Datang di Bulletin Board', 'Admin', 'password123', 'Ini adalah post pertama di bulletin board ini.', 5,
-        CURRENT_TIMESTAMP - INTERVAL '2 days'),
-       ('Tutorial Spring MVC', 'User1', 'pass1234', 'Spring MVC adalah framework yang bagus untuk pengembangan web.', 3,
-        CURRENT_TIMESTAMP - INTERVAL '1 day'),
-       ('Pengumuman Penting', 'Admin', 'password123', 'Harap perhatikan pengumuman ini dengan seksama.', 10,
-        CURRENT_TIMESTAMP - INTERVAL '12 hours');
+VALUES
+    ('Selamat datang di Bulletin Board', 'Admin', 'password123', 'Ini adalah konten dari bulletin board. Silahkan klik Create untuk menambah post!', 15, CURRENT_TIMESTAMP - INTERVAL '3 days'),
+
+    ('저는 한국어 공부를 좋아합니다', 'JavaDev', 'java2023', '어제 저녁에 맛있는 한국 음식을 먹었어요', 19, CURRENT_TIMESTAMP - INTERVAL '6 hours');

@@ -11,7 +11,7 @@
                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- Enable component scanning for controllers -->
-    <context:component-scan base-package="com.finshot.bulletin.controller"/>
+    <context:component-scan base-package="com.finshot.bulletin.controller, com.finshot.bulletin.controller.api"/>
 
     <!-- Enable MVC annotations -->
     <mvc:annotation-driven/>

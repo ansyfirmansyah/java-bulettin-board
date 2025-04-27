@@ -1,0 +1,78 @@
+/* src/main/webapp/resources/css/styles.css */
+
+/* Post list table formatting */
+.table th {
+    background-color: #f8f9fa;
+}
+
+/* Add a subtle hover effect on post rows */
+.table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Format long content in the post detail view */
+.card-text {
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+/* Make form labels bold */
+.form-label {
+    font-weight: 500;
+}
+
+/* Add loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #007bff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Remove focus outline on buttons after clicking */
+.btn:focus {
+    box-shadow: none;
+}
+
+/* Custom error message styling */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Fix modals above other content */
+.modal-backdrop {
+    z-index: 1040;
+}
+.modal {
+    z-index: 1050;
+}
+
+/* Add some spacing between form elements */
+.mb-3:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Style the navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Make post titles stand out */
+.card-title {
+    color: #212529;
+    font-weight: 600;
+}
+
+/* Format post metadata */
+.text-muted {
+    font-size: 0.875rem;
+}
