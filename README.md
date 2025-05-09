@@ -45,7 +45,6 @@
 - **POST /api/posts** - Create a new post
 - **PUT /api/posts/{id}** - Update an existing post
 - **DELETE /api/posts/{id}** - Delete a post
-- **POST /api/posts/{id}/verify-password** - Verify post password
 
 ## Setup and Installation
 
