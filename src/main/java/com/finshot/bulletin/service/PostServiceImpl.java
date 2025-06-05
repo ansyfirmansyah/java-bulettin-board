@@ -34,7 +34,7 @@ public class PostServiceImpl implements PostService {
         Post post = postDao.getPostById(id);
         if (post != null) {
             postDao.incrementViewCount(id);
-            // Update the local view count to reflect the increment
+            // Update the local view count to reflect the incrementNonThreadSafe
             post.setViewCount(post.getViewCount() + 1);
         }
         return post;
